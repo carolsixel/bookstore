@@ -5,10 +5,12 @@ jobs:
   qa:
     name: Quality check
     runs-on: ubuntu-22.04
+    env:
+      SECRET_KEY: 'random_secret_key'
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@master
+        uses: actions/setup-python@v5
         with:
           python-version: 3.14
       - name: Install poetry
