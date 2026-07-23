@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 import debug_toolbar
-from bookstore import views
+from bookstore_app import views
 from django.contrib import admin
 from django.urls import include, path, re_path
 from rest_framework.authtoken.views import obtain_auth_token
