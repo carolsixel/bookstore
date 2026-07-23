@@ -63,10 +63,11 @@ ROOT_URLCONF = "bookstore_app.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        'DIRS': [os.path.join(BASE_DIR, 'bookstore', 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
@@ -154,13 +155,12 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-SECRET_KEY = os.environ.get("SECRET_KEY")
+#SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts whith a space between each.
 # for example: 'DJANGO_ALLOWED_HOSTS=LOCALHOST 127.0.0.1 [::1]'
 ALLOWED_HOSTS = ['localhost', '127.0.0.1',
-'ebac-bookstore-api.herokuapp.com',
 'carolsixel.pythonanywhere.com']
 
